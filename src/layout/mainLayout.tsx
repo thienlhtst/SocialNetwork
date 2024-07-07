@@ -6,10 +6,7 @@ export const MainLayout = () => {
     const navigate = useNavigate();
     useEffect(() => {
       const test =  localStorage.getItem('key')
-      
-      if(!test){
-        navigate("/login")
-      }
+     
     })
   return (
     <_header></_header>
