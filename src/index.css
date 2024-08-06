@@ -7,3 +7,22 @@
     padding: 0;
     box-sizing: 0;
   }
+
+  @keyframes bounce-up {
+    0% {
+      transform: translateY(12px);
+    }
+    20% {
+      transform: translateY(-8px);
+    }
+    80% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(66px);
+    }
+  }
+
+.animate-bounce-up {
+    animation: bounce-up 1.5s forwards;
+}
