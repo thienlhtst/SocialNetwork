@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import { Login } from '../components/login/login'
 import { PlusOutlined } from '@ant-design/icons'
 
 export const AuthLayout = () => {

@@ -1,25 +1,41 @@
-import { EventHandler, ReactEventHandler, useState } from "react";
-import { Outlet } from "react-router-dom";
-import { MainLayout } from "../../layout/mainLayout";
-import { error } from "console";
+import { Alert } from "antd";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import React from "react";
+import useLocalStorage from "../share/useLocalStorage";
+import { profile } from "console";
 
 var style_input: string = "w-full mb-2 p-4 text-[15px] bg-neutral-100 focus:outline-none focus-visible:border-gray-400 border rounded-xl border-transparent hover:border-indigo-500/50";
 
 interface dataLogin {
   user: string;
   password: string;
-  error?: string | null;
+  message?: string | null;
+  status?: 'success' | 'info' | 'warning' | 'error' | undefined;
 }
 
 const initialState: dataLogin = {
   user: '',
   password: '',
-  error: null
+  message: null,
+  status: undefined,
 };
 
+interface lang {
+  itemEN?: string | null,
+  itemVN?: string | null,
+  language: string,
+}
+
+const initialLang = {
+  itemEN: null,
+  itemVN: null,
+  language: '',
+}
 
 export const Login = () => {
 
+  const navigate = useNavigate();
   const [state, setState] = useState<dataLogin>(initialState);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,10 +45,19 @@ export const Login = () => {
       [name]: value
     });
   };
+  useEffect(() => {
+    localStorage.removeItem('id');
+    const item = localStorage.getItem('item');
+    if(item) {
+      console.log('true');
+    } else {
+      localStorage.setItem('item', '12343454');
+    }
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setState({ ...state, error: null });
+    setState({ ...state, message: null, status: undefined });
 
     const loginData = {
       user: state.user,
@@ -54,14 +79,19 @@ export const Login = () => {
         console.log('Success:', result);
         console.log(result.message);
         console.log(result.status);
-        setState({...state, error: result.message});
+        setState({ ...state, message: result.message, status: result.status });
       }
 
       const result = await response.json();
       console.log('Success:', result);
       console.log(result.message);
       console.log(result.status);
-
+      console.log(result.data);
+      setState({ ...state, message: result.message, status: result.status });
+      setTimeout(() => {
+        localStorage.setItem('id', result.message)
+        navigate("/home");
+      }, 1000);
     } catch (error) {
     }
   };
@@ -101,7 +131,8 @@ export const Login = () => {
 
       </div>
       {/* vẫn nên sử dụng ant design */}
-      {state.error && <span className="animate-bounce-up bg-black z-[2] rounded-lg py-4 px-6 absolute bottom-0 text-[16px] text-white font-medium">{state.error}</span>}
+
+      {state.message && <Alert className="w-[40%] animate-bounce-up z-[2] py-4 px-6 absolute bottom-0 text-[16px] font-medium" message={state.message} type={state.status} showIcon></Alert>}
     </>
   )
 }

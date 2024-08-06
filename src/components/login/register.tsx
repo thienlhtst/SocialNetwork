@@ -1,6 +1,5 @@
 import { Checkbox } from 'antd';
 import React, { useState } from 'react'
-import { Outlet } from 'react-router-dom'
 
 var style_input: string = "w-full mb-2 p-4 text-[15px] bg-neutral-100 focus:outline-none focus-visible:border-gray-400 border rounded-xl border-transparent hover:border-indigo-500/50";
 
