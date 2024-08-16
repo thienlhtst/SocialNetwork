@@ -7,20 +7,24 @@ import { Home } from "../components/home/Home";
 import { Profile } from "../components/profile/Profile";
 import Search from "antd/es/transfer/search";
 import { Activity } from "../components/activity/Activity";
+import { Container } from "../components/share/Container";
 
-export function RouteConfig () {
+export function RouteConfig() {
 
-    return(
+    return (
         <Routes>
             <Route path="/" element={<MainLayout />}>
-                <Route index element={<Home />}></Route>
-                <Route path="profile" element={<Profile />}></Route>
-                <Route path="search" element={<Search />}></Route>
-                <Route path="activity" element={<Activity />}></Route>
+
+                <Route path="" element={<Container />}>
+                    <Route index element={<Home />}></Route>
+                    <Route path="profile" element={<Profile />}></Route>
+                    <Route path="search" element={<Search />}></Route>
+                    <Route path="activity" element={<Activity />}></Route>
+                </Route>
             </Route>
             <Route path="/auth" element={<AuthLayout />}>
-                <Route path="login" element={<Login />}/>
-                <Route path="register" element={<Register />}/>
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
             </Route>
         </Routes>
     )
