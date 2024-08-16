@@ -6,10 +6,16 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
+  base: "/",
   plugins: [react()],
+  preview: { 
+    port: 8080,
+    strictPort: true,
+  },
   server: {
     port: parseInt(env.PORT),
-    host: true
+    host: true,
+    origin: "http://0.0.0.0:8080",
   },
 }
 })
