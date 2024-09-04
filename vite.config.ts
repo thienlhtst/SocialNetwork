@@ -15,7 +15,7 @@ export default defineConfig(({mode}) => {
   server: {
     port: parseInt(env.PORT),
     host: true,
-    origin: "http://0.0.0.0:8080",
+    origin: "localhost:8080",
   },
 }
 })
