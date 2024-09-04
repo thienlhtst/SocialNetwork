@@ -8,6 +8,7 @@ import { Profile } from "../components/profile/Profile";
 import Search from "antd/es/transfer/search";
 import { Activity } from "../components/activity/Activity";
 import { Container } from "../components/share/Container";
+import { Shop } from "../components/shop/Shop";
 
 export function RouteConfig() {
 
@@ -20,12 +21,15 @@ export function RouteConfig() {
                     <Route path="profile" element={<Profile />}></Route>
                     <Route path="search" element={<Search />}></Route>
                     <Route path="activity" element={<Activity />}></Route>
+                
                 </Route>
+               
             </Route>
             <Route path="/auth" element={<AuthLayout />}>
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
             </Route>
+            <Route path="shop" element={<Shop />}></Route> 
         </Routes>
     )
 }

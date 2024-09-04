@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, redirect, useNavigate, Outlet, NavLink } from 'react-router-dom';
-import { HeartOutlined, HomeOutlined, InstagramOutlined, MenuOutlined, PushpinOutlined, SearchOutlined, UserOutlined } from '@ant-design/icons';
+import { HeartOutlined, HomeOutlined, InstagramOutlined, MenuOutlined, PushpinOutlined, SearchOutlined, ShopOutlined, UserOutlined } from '@ant-design/icons';
 
 const navBarActive = ({isActive} : any) => {
   return isActive ? 'px-4 py-3 rounded-xl bg-slate-200'
@@ -8,7 +8,6 @@ const navBarActive = ({isActive} : any) => {
 }
 
 export const MainLayout = () => {
-
 
   return (
     <div>
@@ -21,6 +20,7 @@ export const MainLayout = () => {
           <li><NavLink to="search" className={navBarActive}><SearchOutlined /></NavLink></li>
           <li><NavLink to="activity" className={navBarActive}><HeartOutlined /></NavLink></li>
           <li><NavLink to="profile" className={navBarActive}><UserOutlined /></NavLink></li>
+          <li><NavLink to="shop" className={navBarActive}><ShopOutlined /></NavLink></li>
         </ul>
         <ul className='mb-6 flex flex-col gap-5 items-center text-[24px]'>
           <li><a href="" className='opacity-40 hover:opacity-100'>
