@@ -21,7 +21,7 @@ export function RouteConfig() {
                     <Route path="profile" element={<Profile />}></Route>
                     <Route path="search" element={<Search />}></Route>
                     <Route path="activity" element={<Activity />}></Route>
-                
+                    <Route path="shop" element={<Shop />}></Route> 
                 </Route>
                
             </Route>
@@ -29,7 +29,7 @@ export function RouteConfig() {
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
             </Route>
-            <Route path="shop" element={<Shop />}></Route> 
+            
         </Routes>
     )
 }
