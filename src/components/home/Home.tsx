@@ -1,65 +1,39 @@
 import { CommentOutlined, EllipsisOutlined, HeartFilled, HeartOutlined, HeartTwoTone, RetweetOutlined, SendOutlined } from '@ant-design/icons'
 import { Image } from 'antd'
+
 import React from 'react'
+
 
 export const Home = () => {
 
     const data = [
         {
+         
             id: 1,
-            user: {
+            user: [{
                 id: 1,
                 name: 'min.tine.02',
                 avatar: 'avt.jpg',
             },
-            title: 'Cầu vồng tượng trưng cho hy vọng.',
-            date: '1 giờ',
-            location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-            image: 'ghsadbakj.jpg',
-            like: {
-                count: 1,
-                isLiked: false
-            },
-            comment:
             {
-                count: 2,
-                detail: [
-
-                ]
+                id:2,
+                name:"cc",
+                avatar:'avt.jpg'
             },
-            retweet: 3,
-            send: 4
-        },
-        {
-            id: 1,
-            user: {
-                id: 1,
-                name: 'min.tine.02',
-                avatar: 'avt.jpg',
+            {
+                id:2,
+                name:"cc",
+                avatar:'avt.jpg'
             },
+            {
+                id:2,
+                name:"cc",
+                avatar:'avt.jpg'
+            }],
             title: 'Cầu vồng tượng trưng cho hy vọng.',
             date: '1 giờ',
             location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-            image: '',
-            like: {
-                count: 1,
-                isLiked: false
-            },
-            comment: 2,
-            retweet: 3,
-            send: 4
-        },
-        {
-            id: 1,
-            user: {
-                id: 1,
-                name: 'min.tine.02',
-                avatar: 'avt.jpg',
-            },
-            title: 'Cầu vồng tượng trưng cho hy vọng.',
-            date: '1 giờ',
-            location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-            image: '',
+            image: "",
             like: {
                 count: 1,
                 isLiked: false
@@ -83,7 +57,11 @@ export const Home = () => {
                     </div>
                     <div className='w-full ml-2 flex flex-col gap-1'>
                         <div className='w-full flex felx-row gap-2 justify-start items-center relative'>
-                            <a href='' className='font-bold hover:underline'>{item.user.name}</a>
+                            {item.user.map ((items) => (
+                               items.avatar
+                            ))}
+                            
+                            
                             <div className='text-[#999999]'>{item.date}</div>
                             <div className='translate-y-[-4px] absolute top-0 right-0 p-1 w-10 rounded-full text-[20px] text-[#999999] text-center hover:bg-[#e9e9e9] cursor-pointer'><EllipsisOutlined /></div>
                         </div>
@@ -92,9 +70,12 @@ export const Home = () => {
                                 <span>Cầu vồng tượng trưng cho hy vọng. </span>
                                 <span>Hồ đá xanh - Thành phố Vũng Tàu</span>
                             </div>
-                            {item.image && (<div className='w-full flex flex-row gap-2 overflow-hidden'>
-                                <Image width={250} src='..\src\assets\share-image\avt.jpg'></Image>
-                            </div>)}
+                           <div className='w-full flex flex-row gap-2 overflow-hidden'>
+                           {item.user.map ((item1) => (
+                               <Image width={250} src={'../src/assets/share-image/'+item1.avatar} > </Image>
+                            ))}
+                
+                            </div>
                         </div>
                         <ul className='w-full h-9 flex flex-row justify-start items-center gap-2 text-lg text-[#555555]'>
                             <li className='flex flex-row gap-1 px-3 h-[32px]  hover:bg-[#e9e9e9] rounded-full cursor-pointer'>

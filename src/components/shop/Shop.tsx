@@ -15,7 +15,7 @@ export const Shop = () => {
       price : 1000000,
       date: '1 giờ',
       location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-      image: 'avt.jpg',
+      image: 'product.png',
       like: {
           count: 1,
           isLiked: false
@@ -39,7 +39,7 @@ export const Shop = () => {
       price : 1000000,
       date: '1 giờ',
       location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-      image: 'avt.jpg ',
+      image: 'product.png',
       like: {
           count: 1,
           isLiked: false
@@ -62,7 +62,7 @@ export const Shop = () => {
       price : 1000000,
       date: '1 giờ',
       location: 'Hồ đá xanh - Thành phố Vũng Tàu',
-      image: 'avt.jpg',
+      image: '',
       like: {
           count: 1,
           isLiked: false
