@@ -10,8 +10,8 @@ const navBarActive = ({isActive} : any) => {
 export const MainLayout = () => {
 
   return (
-    <div>
-      <div className='w-[72px] h-screen fixed top-0 left-0 z-50 flex flex-col justify-between items-center'>
+    <div className='bg-[#fff] h-screen'>
+      <div className='w-[72px]  h-full fixed top-0 left-0 z-50 flex flex-col justify-between items-center'>
         <div className='mt-6'>
           <InstagramOutlined className='text-4xl cursor-pointer' />
         </div>

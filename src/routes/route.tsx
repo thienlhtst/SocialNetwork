@@ -9,19 +9,22 @@ import Search from "antd/es/transfer/search";
 import { Activity } from "../components/activity/Activity";
 import { Container } from "../components/share/Container";
 import { Shop } from "../components/shop/Shop";
+import ItemLayout from "../layout/ItemLayout";
 
 export function RouteConfig() {
 
     return (
         <Routes>
             <Route path="/" element={<MainLayout />}>
-
                 <Route path="" element={<Container />}>
-                    <Route index element={<Home />}></Route>
+                <Route index element={<Home />}></Route>
+                <Route path="" element={<ItemLayout />}>
+                   
                     <Route path="profile" element={<Profile />}></Route>
                     <Route path="search" element={<Search />}></Route>
                     <Route path="activity" element={<Activity />}></Route>
                     <Route path="shop" element={<Shop />}></Route> 
+                    </Route>
                 </Route>
                
             </Route>
