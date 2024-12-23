@@ -27,3 +27,21 @@
 .animate-bounce-up {
     animation: bounce-up 1.5s forwards;
 }
+
+.image-container {
+  width: 100%; /* Độ rộng container */
+  height: 300px; /* Độ cao container */
+  overflow: hidden; /* Ẩn phần hình ảnh tràn ra ngoài */
+  cursor: grab; /* Thay đổi con trỏ chuột khi kéo */
+  display: flex;
+  justify-content: start;
+}
+.image-container:active {
+  cursor: grabbing; /* Thay đổi con trỏ khi đang kéo */
+}
+.image {
+  width: auto;
+  height: 100%;
+  border-radius: 6px;
+}
+

@@ -45,15 +45,15 @@ export const Login = () => {
       [name]: value
     });
   };
-  useEffect(() => {
-    localStorage.removeItem('id');
-    const item = localStorage.getItem('item');
-    if(item) {
-      console.log('true');
-    } else {
-      localStorage.setItem('item', '12343454');
-    }
-  })
+  // useEffect(() => {
+  //   localStorage.removeItem('id');
+  //   const item = localStorage.getItem('item');
+  //   if(item) {
+  //     console.log('true');
+  //   } else {
+  //     localStorage.setItem('item', '12343454');
+  //   }
+  // })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ export const Login = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8082/api/profile/login", {
+      const response = await fetch("http://192.168.1.16:8082/api/profile/login", {
         method: 'POST',
         headers: {
           'accept': '*/*',
