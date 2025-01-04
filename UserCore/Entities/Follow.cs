@@ -8,10 +8,10 @@ namespace UserCore.Entities
 {
     public class Follow
     {
-        public Guid UserIdFollower { get; set; }
+        public string UserIdFollower { get; set; }
         public User UserFollower { get; set; }
 
-        public Guid UserIdFollowee { get; set; }
+        public string UserIdFollowee { get; set; }
         public User UserFollowee { get; set; }
 
         public DateTime CreateAat { get; set; } = DateTime.Now;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UserCore.Entities;
+using UserInfrastructure.Configurations;
 
 namespace UserInfrastructure
 {
@@ -18,6 +19,9 @@ namespace UserInfrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new FollowConfiguration());
+
             base.OnModelCreating(modelBuilder);
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
@@ -30,5 +34,6 @@ namespace UserInfrastructure
         }
 
         public DbSet<Follow> Follows { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
