@@ -12,5 +12,9 @@ namespace UserCore.InterfaceRepositories
     public interface IFollowRepository
     {
         Task<Follow> GetbyID(string idfollower, string idfollowee);
+
+        public Task<int> RequestFollowTo(string idfollower, string idfollowee);
+
+        public Task<int?> RemoveFollowAccount(string UserIdFollower, string UserIdFollowee);
     }
 }

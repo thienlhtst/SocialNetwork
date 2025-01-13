@@ -4,7 +4,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        //   CreateHostBuilder(args).Build().MigrateDatabase<HRMDbContext>().Run();
+        CreateHostBuilder(args).Build().Run();
+        // CreateHostBuilder(args).Build().MigrateDatabase<HRMDbContext>().Run();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>

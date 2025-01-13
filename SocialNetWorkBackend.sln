@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserPresentation", "UserPresentation\UserPresentation.csproj", "{00856FBC-C0F4-4E05-B89F-60AA9F9BFBFD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserSevices", "UserSevices", "{C53CB474-3166-4AE8-8BE1-59C6A823AA8D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserServices", "UserServices", "{C53CB474-3166-4AE8-8BE1-59C6A823AA8D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserCore", "UserCore\UserCore.csproj", "{9D37E23A-A643-4EB9-AF1C-3E854C7B893A}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInfrastructure", "UserInfrastructure\UserInfrastructure.csproj", "{EA9D01EF-492C-4095-9417-BCD4D88F8DDF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B184386B-28D5-4E13-9D98-8C01F20B8857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService", "NotificationService", "{D4B6A91E-8B64-4FC2-B65A-9C7F95F39597}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationPresentation", "NotificationPresentation\NotificationPresentation.csproj", "{5E7B29E2-983C-4B31-9B42-EFD398F5F53E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{EA9D01EF-492C-4095-9417-BCD4D88F8DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA9D01EF-492C-4095-9417-BCD4D88F8DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA9D01EF-492C-4095-9417-BCD4D88F8DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7B29E2-983C-4B31-9B42-EFD398F5F53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7B29E2-983C-4B31-9B42-EFD398F5F53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7B29E2-983C-4B31-9B42-EFD398F5F53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7B29E2-983C-4B31-9B42-EFD398F5F53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{9D37E23A-A643-4EB9-AF1C-3E854C7B893A} = {C53CB474-3166-4AE8-8BE1-59C6A823AA8D}
 		{9585E710-A458-4499-8F4B-45997BB1F4E5} = {C53CB474-3166-4AE8-8BE1-59C6A823AA8D}
 		{EA9D01EF-492C-4095-9417-BCD4D88F8DDF} = {C53CB474-3166-4AE8-8BE1-59C6A823AA8D}
+		{5E7B29E2-983C-4B31-9B42-EFD398F5F53E} = {D4B6A91E-8B64-4FC2-B65A-9C7F95F39597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0568817D-DFE1-4D63-9147-7CFF98D807FD}

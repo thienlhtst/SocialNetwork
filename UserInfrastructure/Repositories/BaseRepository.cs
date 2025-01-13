@@ -55,9 +55,13 @@ namespace UserInfrastructure.Repositories
             return result;
         }
 
-        public Task<T> Update(T entity)
+        public async Task<T> Update(T entity)
         {
-            throw new NotImplementedException();
+            var reponse = _userDbContext.Set<T>().Update(entity);
+            var result = await _userDbContext.SaveChangesAsync();
+            if (result==1)
+                return reponse.Entity;
+            return null;
         }
     }
 }

@@ -34,6 +34,5 @@ namespace UserInfrastructure
         }
 
         public DbSet<Follow> Follows { get; set; }
-        public DbSet<User> Users { get; set; }
     }
 }
