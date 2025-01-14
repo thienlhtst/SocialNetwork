@@ -10,10 +10,12 @@ namespace UserPresentation.Controllers
     public class FollowController : ControllerBase
     {
         private readonly IFollowService _followService;
+        private readonly IPushNotificationService _postNotificationService;
 
-        public FollowController(IFollowService followService)
+        public FollowController(IFollowService followService, IPushNotificationService pushNotificationService)
         {
             _followService=followService;
+            _postNotificationService=pushNotificationService;
         }
 
         [HttpGet]
@@ -27,6 +29,7 @@ namespace UserPresentation.Controllers
         public async Task<IActionResult> RequestFollowTo([FromBody] RequestFollowVM request)
         {
             var result = await _followService.RequestFollowTo(request);
+            await _postNotificationService.SendNotificationFollow(request);
             return Ok(result);
         }
 

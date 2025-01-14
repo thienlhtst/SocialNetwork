@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
+using MassTransit;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -19,6 +19,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using UserApplication.Interfaces;
 using UserCore.Entities;
 using UserCore.InterfaceRepositories;
 using UserInfrastructure;
@@ -66,6 +67,19 @@ namespace UserPresentation
             //services.AddAutoMapper(typeof(AllowanceMapper).Assembly);
             //
 
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((ctx, cfg) =>
+                {
+                    cfg.Host("localhost", "/", h =>
+                    {
+                        h.Username("guest");
+                        h.Password("guest");
+                    });
+                    cfg.ConfigureEndpoints(ctx);
+                });
+            });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         .AddJwtBearer(options =>
                         {
@@ -93,7 +107,7 @@ namespace UserPresentation
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger Timekeeping Solution", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "User Solution", Version = "v1" });
 
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
